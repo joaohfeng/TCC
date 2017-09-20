@@ -24,7 +24,7 @@ export default {
             conectado:'',
             urlmqtt:'Url do broker',
             configMqtt:{
-                port: 999999,
+                port: XXXXXX,
                 username: 'usuario',
                 password: 'Senha',
             },
