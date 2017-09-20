@@ -8,6 +8,18 @@ const extractSass = new ExtractTextPlugin({
 })
 
 const rules = {
+  imagem:{
+    test:/\.(png|jpg|gif|svg)$/,
+    loader: 'file-loader',
+    options: {
+      name: '[name].[ext]?[hash]'
+    }
+  },
+  vue:{
+    test:/\.vue$/,
+    loader: 'vue-loader',
+    exclude: /(node_modules)/
+  },
   sass: {
     test:/\.css$/,
     use:extractSass.extract({
@@ -48,14 +60,16 @@ const rules = {
 }
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./src/main.js",
   output: {
     path:path.resolve( __dirname,'dist'),
-    filename: "bundle.js"
-
+    filename: "bundle.js",
+    library:['VueMqtt']
   },
   module: {
     rules: [
+      rules.imagem,
+      rules.vue,
       rules.sass,
       rules.jsTranspile
     ]
