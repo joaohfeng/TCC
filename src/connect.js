@@ -13,7 +13,7 @@ export default class{
 
     self.Mqtt.on('connect',function(){
 
-      self.Mqtt.publish('conexao','Conectado com sucesso', function(){
+      self.Mqtt.publish('conexao','PaginaWeb', function(){
         console.log("\nCONEXAO ESTABELECIDA");
       });
     return self.connection =true;

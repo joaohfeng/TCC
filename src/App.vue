@@ -16,18 +16,15 @@
 
 <script>
 import Connect from './connect'
+import { serverConfig } from './serverConfig'
 
 export default {
     name: 'app',
-    data () {
+   data () {
         return {
             conectado:'',
-            urlmqtt:'Url do broker',
-            configMqtt:{
-                port: XXXXXX,
-                username: 'usuario',
-                password: 'Senha',
-            },
+            urlmqtt: serverConfig.url,
+            configMqtt: serverConfig.settings,
             portmqtt:'',
             usermqtt:'',
             passmqtt:'',
